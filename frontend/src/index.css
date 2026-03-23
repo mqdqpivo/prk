@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-main: #F8F7F4;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #F0EEE9;
+  --border: #E5E3DF;
+  --text-primary: #1A1A1A;
+  --text-secondary: #6B7280;
+  --accent: #2563EB;
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input, select, textarea, button {
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes pulse-skeleton {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+.skeleton {
+  background: #E5E3DF;
+  animation: pulse-skeleton 1.5s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+@keyframes slide-in-bottom {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.toast-enter {
+  animation: slide-in-bottom 0.3s ease-out;
+}
+
+.toast-exit {
+  animation: fade-out 0.3s ease-out forwards;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E5E3DF;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D1CFC9;
+}
